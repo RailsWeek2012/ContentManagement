@@ -1,0 +1,31 @@
+<h2 align="center">News</h2>
+
+<table>
+
+<% @newsscripts.each do |newsscript| %>
+  <tr>
+    <td><%= newsscript.headline %></td>
+  </tr>
+  <tr>
+    <td><%= raw newsscript.news %></td>
+  </tr>
+  <tr>
+    <td><%= newsscript.author %></td>
+  </tr>
+    <td>
+        <%= link_to 'Show', newsscript %>
+        <% if user_signed_in? %>
+            <%= link_to 'Edit', edit_newsscript_path(newsscript) %>
+            <%= link_to 'Destroy', newsscript, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if user_signed_in? %>
+    <%= link_to 'Neue News schreiben', new_newsscript_path %>
+<% end %>
+

@@ -1,0 +1,66 @@
+<h1>Vorstand</h1>
+
+<table>
+<% @managements.each do |management| %>
+  <tr>
+    <td valign="top"><%= image_tag management.photo.url(:thumb) %></td>
+    <td>
+        <table>
+          <tr>
+            <td>Name: </td>
+            <td><%= management.name %></td>
+          </tr>
+          <tr>
+            <td>Vorname: </td>
+            <td><%= management.prename %></td>
+          </tr>
+          <tr>
+            <td>Email: </td>
+            <td><%= mail_to management.email %></td>
+          </tr>
+          <tr>
+            <td>Geburtstag: </td>
+            <td><%= management.bday %></td>
+          </tr>
+          <tr>
+            <td>Schule: </td>
+            <td><%= management.school %></td>
+          </tr>
+          <tr>
+            <td>Studium: </td>
+            <td><%= management.study %></td>
+          </tr>
+          <tr>
+            <td>Beruf: </td>
+            <td><%= management.job %></td>
+          </tr>
+          <tr>
+            <td>Hobbys: </td>
+            <td><%= management.hobby %></td>
+          </tr>
+          <tr>
+            <td>Über mich: </td>
+            <td><%= management.about %></td>
+          </tr>
+          <tr>
+            <td></td><td>
+                <%= link_to 'Show', management %>
+                <% if user_signed_in? %>
+                    <%= link_to 'Edit', edit_management_path(management) %>
+                    <%= link_to 'Destroy', management, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+      </table>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if user_signed_in? %>
+    <%= link_to 'Neues Vorstandsmitglied anlegen', new_management_path %>
+<% end %>

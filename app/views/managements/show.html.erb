@@ -1,0 +1,59 @@
+<!--<p id="notice"><%= notice %></p>     -->
+
+<table>
+  <tr>
+    <td>
+      <%= image_tag @management.photo.url(:small) %>
+    </td>
+    <td>
+        <p>
+          <b>Name:</b>
+          <%= @management.name %>
+        </p>
+
+        <p>
+          <b>Vorname:</b>
+          <%= @management.prename %>
+        </p>
+
+        <p>
+          <b>Email:</b>
+          <%= @management.email %>
+        </p>
+
+        <p>
+          <b>Geburtsdatum:</b>
+          <%= @management.bday %>
+        </p>
+
+        <p>
+          <b>Schule:</b>
+          <%= @management.school %>
+        </p>
+
+        <p>
+          <b>Studium:</b>
+          <%= @management.study %>
+        </p>
+
+        <p>
+          <b>Beruf:</b>
+          <%= @management.job %>
+        </p>
+
+        <p>
+          <b>Hobbys:</b>
+          <%= @management.hobby %>
+        </p>
+
+        <p>
+          <b>Über mich:</b>
+          <%= @management.about %>
+        </p>
+    </td>
+  </tr>
+</table>
+<% if user_signed_in? %>
+    <%= link_to 'Edit', edit_management_path(@management) %> |
+<% end %>
+<%= link_to 'Back', managements_path %>

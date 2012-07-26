@@ -1,0 +1,22 @@
+<h2>Impressum</h2>
+
+<table>
+  <!--<tr>
+    <th>Impressum</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>  -->
+
+<% @impressums.each do |impressum| %>
+  <tr>
+    <td><%= impressum.impressum %></td>
+  </tr>
+  <tr>
+    <td> <br /> </td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Edit', edit_impressum_path(impressum) %></td>
+  </tr>
+<% end %>
+</table>

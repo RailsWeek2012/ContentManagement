@@ -1,0 +1,29 @@
+<%= form_for(@newsscript) do |f| %>
+  <% if @newsscript.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@newsscript.errors.count, "error") %> prohibited this newsscript from being saved:</h2>
+
+      <ul>
+      <% @newsscript.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :headline %><br />
+    <%= f.text_field :headline %>
+  </div>
+  <div class="field">
+    <%= f.label :news %><br />
+    <%= f.cktext_area :news, :toolbar => 'Easy' %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

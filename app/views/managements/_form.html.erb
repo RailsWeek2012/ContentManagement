@@ -1,0 +1,56 @@
+<%= form_for @management, :html => { :multipart => true } do |f| %>
+  <% if @management.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@management.errors.count, "error") %> prohibited this management from being saved:</h2>
+
+      <ul>
+      <% @management.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :vorname %><br />
+    <%= f.text_field :prename %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :geburtsdatum %><br />
+    <%= f.date_select :bday %>
+  </div>
+  <div class="field">
+    <%= f.label :schule %><br />
+    <%= f.text_field :school %>
+  </div>
+  <div class="field">
+    <%= f.label :studium %><br />
+    <%= f.text_field :study %>
+  </div>
+  <div class="field">
+    <%= f.label :beruf %><br />
+    <%= f.text_field :job %>
+  </div>
+  <div class="field">
+    <%= f.label :hobbys %><br />
+    <%= f.text_area :hobby, :rows => 5 %>
+  </div>
+  <div class="field">
+    <%= f.label :über_mich %><br />
+    <%= f.text_area :about, :rows => 5 %>
+  </div>
+  <div class="field">
+    <%= f.file_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<h2>Neuen Benutzer anlegen</h2>
+<%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </p>
+    <p>
+      <%= f.label :rights %>
+      <%= radio_button_tag(:rights, 1) %>
+      <%= label_tag(:rights_admin, "Admin") %>
+      <%= radio_button_tag(:rights, 2) %>
+      <%= label_tag(:rights_master, "Master") %>
+      <%= radio_button_tag(:rights, 3) %>
+      <%= label_tag(:rights_op, "Operator") %>
+      <%= radio_button_tag(:rights, 4) %>
+      <%= label_tag(:rights_news, "Newsposter") %>
+    </p>
+    <p><%= f.submit %></p>
+<% end %>

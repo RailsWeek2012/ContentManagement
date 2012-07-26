@@ -1,0 +1,19 @@
+<p>
+  <b>Headline:</b>
+  <%= @newsscript.headline %>
+</p>
+
+<p>
+  <b>News:</b>
+  <%= raw @newsscript.news %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @newsscript.author %>
+</p>
+
+<% if user_signed_in? %>
+    <%= link_to 'Edit', edit_newsscript_path(@newsscript) %> |
+<% end %>
+<%= link_to 'Back', newsscripts_path %>

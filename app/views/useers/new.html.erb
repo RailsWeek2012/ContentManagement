@@ -1,0 +1,27 @@
+<h2>Neuen Benutzer anlegen</h2>
+<%= form_for(@useer) do |f| %>
+    <% if @useer.errors.any? %>
+        <ul>
+          <% @useer.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </p>
+    <p>
+      <%= f.label :rights %>
+      <%= f.text_field :rights %>
+    </p>
+    <p><%= f.submit %></p>
+<% end %>
