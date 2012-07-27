@@ -3,7 +3,7 @@ class NewsscriptsController < ApplicationController
   # GET /newsscripts.json
   before_filter :require_login!, :except => [:index, :show]
   def index
-    @newsscripts = Newsscript.all
+    @newsscripts = Newsscript.all(:order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

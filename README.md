@@ -35,7 +35,6 @@ http://stackoverflow.com/questions/11640440/config-ckeditor-config-application-r
 
 To Do:
 
-- Pages für News
-- News Sortieren nach Datum
+- Pages für News            e
 - Rechte Management einbauen
 - Bildergallerie
