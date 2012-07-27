@@ -1,34 +1,21 @@
 ContentManagement::Application.routes.draw do
 
-
-  #resources :impressums
+  resources :impressums, only: [:index, :edit, :update, :show]
 
   resources :newsscripts
 
   mount Ckeditor::Engine => '/ckeditor'
 
-#  get "sessions/new"
-
-#  get "sessions/create"
-
-#  get "sessions/destroy"
-
-#  get "users/new"
-
-#  get "users/create"
-
-  resources :useers, only: [:new, :create]
   resources :managements
   resources :users, only: [:new, :create]
   get "login" => "sessions#new", as: "login"
   post "sessions" => "sessions#create", as: "sessions"
   delete "logout" => "sessions#destroy", as: "logout"
-  get "impressums" => "impressums#index", as: "impressums"
-  #get "impressums/new", as: "new_impressum"
-  get "impressums/:id/edit" => "impressums#edit", as: "edit_bookmark"
-  #post "impressums" => "impressums#create"
-  put "impressums/:id" => "impressums#update"
-  get "impressums/:id" => "impressums#show", as: "bookmark"
+  root :to => "newsscripts#index"
+  #get "impressums" => "impressums#index", as: "impressums"
+  #get "impressums/:id/edit" => "impressums#edit", as: "edit_bookmark"
+  #put "impressums/:id" => "impressums#update"
+  #get "impressums/:id" => "impressums#show", as: "bookmark"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

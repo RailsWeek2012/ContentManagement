@@ -1,16 +1,10 @@
-<h2>Impressum</h2>
+<h2 align="center">Impressum</h2>
 
 <table>
-  <!--<tr>
-    <th>Impressum</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>  -->
 
 <% @impressums.each do |impressum| %>
   <tr>
-    <td><%= impressum.impressum %></td>
+    <td><%= raw impressum.impressum %></td>
   </tr>
   <tr>
     <td> <br /> </td>

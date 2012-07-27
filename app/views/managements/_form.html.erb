@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :geburtsdatum %><br />
-    <%= f.date_select :bday %>
+    <%= f.date_select :bday, :order => [:day, :month, :year], :start_year => 1900, :end_year => Date.today.year %>
   </div>
   <div class="field">
     <%= f.label :schule %><br />

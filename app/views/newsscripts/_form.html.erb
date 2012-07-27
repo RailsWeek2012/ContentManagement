@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :author %><br />
-    <%= f.text_field :author %>
+    <%= f.text_field :author, :value => current_user.email, :readOnly => "true" %>
   </div>
   <div class="actions">
     <%= f.submit %>

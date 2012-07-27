@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_filter :store_location
   protect_from_forgery
-
   private
 
   def current_user
@@ -13,13 +13,7 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
-  def get_user_email
-    #@get_user_email = User.find(params[:email])
-    @get_user_email = User.find(params[:email])
-  end
-
   helper_method :user_signed_in?
-  helper_method :get_user_email
   helper_method :current_user
 
   private
@@ -29,4 +23,13 @@ class ApplicationController < ActionController::Base
                   alert: "Bitte einloggen!"
     end
   end
+
+  def store_location
+    session[:return_to] = request.env["REQUEST_URI"] if request.get? and controller_name != "users" and controller_name != "sessions"
+  end
+
+  def redirect_back_or_default(default, options = {})
+    redirect_to(session[:return_to] || default, options)
+  end
+  #from: http://stackoverflow.com/questions/2139996/ruby-on-rails-redirect-toback
 end
