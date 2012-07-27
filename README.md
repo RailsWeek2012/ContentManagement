@@ -27,5 +27,15 @@ Paperclip: http://railscasts.com/episodes/134-paperclip --> für das Management
 ------------
 
 Probleme:
+
 Config Probleme - ckeditor -> Hilfe auf StackOverflow:
 http://stackoverflow.com/questions/11640440/config-ckeditor-config-application-rb
+
+------------
+
+To Do:
+
+- Pages für News
+- News Sortieren nach Datum
+- Rechte Management einbauen
+- Bildergallerie
