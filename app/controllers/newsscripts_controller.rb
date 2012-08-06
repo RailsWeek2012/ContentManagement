@@ -4,6 +4,7 @@ class NewsscriptsController < ApplicationController
   before_filter :require_login!, :except => [:index, :show]
   def index
     @newsscripts = Newsscript.all(:order => "created_at DESC")
+    #@newsscripts = Newsscript.page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

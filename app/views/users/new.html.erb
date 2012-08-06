@@ -21,14 +21,15 @@
     </p>
     <p>
       <%= f.label :rights %>
-      <%= radio_button_tag(:rights, 1) %>
+      <!--<%= radio_button_tag(:rights, 1) %>
       <%= label_tag(:rights_admin, "Admin") %>
       <%= radio_button_tag(:rights, 2) %>
       <%= label_tag(:rights_master, "Master") %>
       <%= radio_button_tag(:rights, 3) %>
       <%= label_tag(:rights_op, "Operator") %>
       <%= radio_button_tag(:rights, 4) %>
-      <%= label_tag(:rights_news, "Newsposter") %>
+      <%= label_tag(:rights_news, "Newsposter") %>-->
+      <%= f.collection_select(:rights, Rights.all, :rights, :title) %>
     </p>
     <p><%= f.submit %></p>
 <% end %>

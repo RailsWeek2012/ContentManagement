@@ -10,7 +10,7 @@
   <%= render "layouts/navbar" %>
   <div id="container">
     <div id="header">
-      <h1>Mein Vereins-CMS</h1>
+      <h1></h1>
       <!--<%= session[:return_to] %>-->
     </div>
     <div id="content">
@@ -29,6 +29,19 @@
     <div id="footer">
       &copy 2012 |
       <%= link_to "Impressum", impressums_url %>
+      <% if user_signed_in? %>
+        | Userstatus:
+        <%= case get_rights
+              when 1
+                "Newsposter"
+              when 2
+                "Operator"
+              when 3
+                "Master"
+              when 4
+                "Admin"
+            end %>
+      <% end %>
     </div>
   </div>
 </body>

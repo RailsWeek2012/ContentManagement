@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      session[:user_rights] = user.rights
       redirect_back_or_default managements_path,
                   notice: "Sie wurden eingeloggt"
     else

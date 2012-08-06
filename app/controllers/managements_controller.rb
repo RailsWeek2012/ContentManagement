@@ -2,6 +2,7 @@ class ManagementsController < ApplicationController
   # GET /managements
   # GET /managements.json
   before_filter :require_login!, :except => [:index, :show]
+  before_filter :require_operator!, :except => [:index, :show]
   def index
     @managements = Management.all
 

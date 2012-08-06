@@ -10,7 +10,8 @@ gem "mime-types", "~> 1.19"
 gem "orm_adapter", "~> 0.4.0"
 gem "ckeditor", "3.7.1"
 gem "paperclip"
-
+#gem "paginate", "~> 1.0.1"
+gem "kaminari"
 
 # Gems used only for assets and not required
 # in production environments by default.
